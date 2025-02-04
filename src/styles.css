@@ -1,0 +1,13 @@
+:root {
+  --background-color: #131312;
+  --text-color: #FFECD1;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  height: 100vh; /* Utilisation de 100vh pour occuper toute la hauteur de la fenêtre */
+  margin: 0; /* Supprimer les marges par défaut du corps */
+}

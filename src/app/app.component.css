@@ -1,0 +1,9 @@
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+}
+app-grid4, app-grid5 {
+  flex: 1;
+}
+
+

@@ -1,0 +1,199 @@
+$title-height: 2em;
+$days-height: 2em;
+$time-width: 2em;
+$time-height: 3em;
+$grid-color: #777474;
+$font-color: #FFECD1;
+$calendar-template: $time-width 10px repeat(5, 10em);
+$current-time-color: #ea4335;
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  margin-left: 10px;
+  border-radius: 20px;
+  background-color: #181818;
+  display: grid;
+  width: fit-content;
+  grid-template-rows: $days-height auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.buttons p {
+  margin: 0;
+  color: $font-color;
+  font-weight: bold;
+}
+
+.calendar-icon {
+  font-size: 20px;
+  color: $font-color;
+  cursor: pointer;
+  margin-right: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+.chevron {
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: $font-color;
+  border: none;
+  font-size: 20px;
+}
+
+.days {
+  display: grid;
+  text-align: center;
+  grid-template-columns: $calendar-template;
+  position: sticky;
+  top: $title-height;
+  z-index: 10;
+  width: fit-content;
+  border-bottom: 2px solid $grid-color;
+}
+
+.day {
+  place-content: center;
+  border-left: 1px solid $grid-color;
+  display: flex;
+  align-items: center;
+}
+
+.day-info {
+  flex-direction: column;
+}
+
+.day-name {
+  margin: 0;
+  font-size: 60%;
+}
+
+.day-date {
+  margin-top: 1px;
+  margin-bottom: 5px;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.current-day-name {
+  color: #1c70e1;
+}
+
+.current-day-date {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #1c70e1;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: $calendar-template;
+  grid-template-rows: repeat(13, $time-height);
+  width: fit-content;
+}
+
+.time {
+  grid-column: 1;
+  text-align: right;
+  align-self: end;
+  font-size: 70%;
+  position: relative;
+  bottom: -1ex;
+  padding-right: 2px;
+}
+
+.col {
+  border-left: 1px solid $grid-color;
+  grid-row: 1 / span 24;
+  grid-column: span 1;
+}
+
+.filler-col {
+  grid-row: 1 / -1;
+  grid-column: 2;
+  border-right: 1px solid $grid-color;
+}
+
+.row {
+  grid-column: 2 / -1;
+  border-bottom: 1px solid $grid-color;
+  margin: 0;
+}
+
+.event {
+  border-radius: 5px;
+  padding: 6px 6px 6px;
+}
+
+.event-name {
+  font-size: 75%;
+  font-weight: bold;
+}
+
+.event-time {
+  font-size: 70%;
+}
+
+.event-room-teacher {
+  font-size: 75%;
+}
+
+.event p {
+  margin: 0;
+  color: $font-color;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.current-time {
+  grid-column: 3 / -1;
+  border-top: 2px solid $current-time-color;
+  position: relative;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border: 1px solid $current-time-color;
+  border-radius: 50%;
+  background: $current-time-color;
+  position: relative;
+  top: -6px;
+  left: -6px;
+}
+
+
+.blue {
+  background-color: #15616D;
+}
+
+.red {
+  background-color: #78290F;
+}
+
+.green {
+  background-color: #004B23;
+}
+
+.yellow {
+  background-color: #D76A01;
+}
+
+.purple {
+  background-color: #5a3f7c;
+}

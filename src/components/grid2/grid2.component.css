@@ -1,0 +1,73 @@
+.overlay{
+    position: absolute;
+    z-index: 1;
+    height: 20vh; 
+    width:  20vw;
+    border-radius: 20px;
+    background: linear-gradient(to top, transparent 0%, #181818 100%);
+    margin-left: 10px;
+}
+
+.chatbox{
+    margin-left: 10px;
+    position: relative;
+    word-wrap: break-word;
+    border-radius: 20px;
+    background-color: #181818;
+    overflow-y: visible;
+    overflow-x: hidden;
+    table-layout: fixed;
+    height: 75.5vh; 
+    width:  20vw;
+    padding: 10px;
+    grid-auto-rows: max-content;
+    display:inline-block;
+    scroll-snap-type: y mandatory;
+}
+
+.message{
+    background-color: #181818;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffffc8;
+    height: auto;
+    vertical-align: top;
+    
+}
+.chatbox::-webkit-scrollbar{
+    width: 0;
+}
+.ProfilePicture{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.PPContainer{
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    overflow-x: hidden;
+}
+
+.MessageContainer{
+    width:100% ;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    border: 0px;
+    height: 40px;
+}
+p{
+    margin-top: 0px;
+}
+tr{
+    height: 40px;
+    scroll-snap-align: start; 
+}
+td{
+    padding: 3px;
+}
+#bottomLine{
+    height: 0px;
+}
+

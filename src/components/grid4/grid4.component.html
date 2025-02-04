@@ -1,0 +1,14 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+
+
+<ul class="timeline">
+  <li *ngFor="let event of upcomingEvents">
+    <div class="direction-r">
+      <div class="flag-wrapper">
+        <span class="flag">{{event[0]}}</span>
+        <span class="time-wrapper"><span class="time">{{event[1]}}</span></span>
+      </div>
+      <div class="desc">{{event[2]}}</div>
+    </div>
+  </li>
+</ul>

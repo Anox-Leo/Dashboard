@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="buttons">
+    <button class="chevron left" (click)="goToLastWeek()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <p>{{currentMonth}} {{currentYear}}</p>
+    <div>
+      <button class="calendar-icon" (click)="goToToday()">
+        <i class="fas fa-calendar"></i>
+      </button>
+      <button class="chevron right" (click)="goToNextWeek()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+  <div class="days">
+    <div class="filler"></div>
+    <div class="filler"></div>
+    <div *ngFor="let day of currentWeek" class="day">
+      <div class="div-info">
+        <p class="day-name" [ngClass]="{'current-day-name': day.isCurrent}">{{day.name}}</p>
+        <p class="day-date" [ngClass]="{'current-day-date': day.isCurrent}">{{day.date}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div *ngFor="let hour of hoursOfDay; let index = index" class="time" [style.grid-row]="index + 1"> {{ hour }} h</div>
+    <div class="filler-col"></div>
+    <div *ngFor="let day of daysOfWeek; let colIndex = index" class="col" [style.grid-column]="colIndex + 3"></div>
+    <div *ngFor="let hour of hoursOfDay; let rowIndex = index" class="row" [style.grid-row]="rowIndex + 1"></div>
+    <div *ngFor="let event of events" class="event {{event.color}}"  [style.grid-column]="event.day + 2" [style.grid-row]="event.start - 6 + ' / span ' + (event.end - event.start)" [ngStyle]="{ 'margin': event.margin }">
+      <p class="event-name">{{event.name}}</p>
+      <p class="event-room-teacher">{{event.room}} &#8226; {{event.teacher}}</p>
+      <p class="event-time">{{event.time}}</p>
+    </div>
+    <div class="current-time" [style.grid-row]="currentHours - 6"  [style.top.%]="currentMinutes">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>

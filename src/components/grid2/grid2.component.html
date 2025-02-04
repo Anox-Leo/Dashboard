@@ -1,0 +1,15 @@
+<div class="overlay"></div>
+  <table class="chatbox">
+    <tr *ngFor="let msg of messages" class="message">
+      <td class="PPContainer">
+        <img class="ProfilePicture" src="{{ msg.ProfilePicture }}">
+      </td> 
+      <td class="MessageContainer">
+        <p><strong>{{ msg.From }}</strong> {{ epochToNiceDiscordDate(msg.DateTime) }} <br>{{ msg.Message }}</p>
+      </td>
+    </tr>
+    <tr id="bottomLine"></tr>
+  </table>
+
+
+
