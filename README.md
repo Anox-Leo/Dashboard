@@ -1,6 +1,6 @@
 # 📅 Dashboard
 
-Dashboard is an AngularJS project, it provides some useful features including an intuitive and interactive schedule management system.
+Dashboard is an AngularJS project, it provides some useful features including an intuitive and interactive schedule management system. 
 
 ## 📸 Preview
 
